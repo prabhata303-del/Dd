@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shuvidha Seva</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @layer base {
+            :root {
+                --primary-color: #673AB7; /* Deep Purple */ 
+                --primary-gradient: linear-gradient(135deg, #7E57C2 0%, #512DA8 100%); /* Light Purple to Dark Purple */
+                --secondary-color: #f8f9fa; /* Soft Grey Background */
+                --text-color: #212529; /* Dark text */
+                --light-text: #6c757d; /* Light text */
+                --border-color: #ced4da;
+                --white: #ffffff;
+                --danger: #D84315; /* Darker Red/Orange for strong alerts/active heart */
+                --success: #00b894; /* Cyan/Teal for success */
+                --blue-action: #E91E63; /* Deep Pink/Magenta */ 
+                --secondary-accent: #E91E63; /* Deep Pink/Magenta */ 
+            }
+            body {
+                font-family: 'Poppins', sans-serif;
+                -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+            }
+        }
+        /* Custom styles not easily expressed in Tailwind, or global resets */
+        html, body, #root {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Prevent body scroll, handled by mobile-container */
+        }
+    </style>
+    <script>
+        // Set Tailwind config for custom colors/theme if needed globally
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: 'var(--primary-color)',
+                secondary: 'var(--secondary-color)',
+                danger: 'var(--danger)',
+                success: 'var(--success)',
+                'secondary-accent': 'var(--secondary-accent)',
+              },
+              backgroundImage: {
+                'primary-gradient': 'var(--primary-gradient)',
+              },
+            }
+          },
+          // Important: Scan all tsx files for Tailwind classes
+          content: [
+            "./index.html",
+            "./src/**/*.{js,ts,jsx,tsx}",
+            "./**/*.{js,ts,jsx,tsx}",
+          ],
+        }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "firebase/": "https://esm.sh/firebase@^12.9.0/"
+  }
+}
+</script>
+</head>
+<body class="bg-[#dfe6e9] flex justify-center items-center min-h-screen text-gray-800">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
